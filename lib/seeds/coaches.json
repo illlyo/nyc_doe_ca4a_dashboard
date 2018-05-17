@@ -1,0 +1,93 @@
+[
+  {
+    "admin_id":1,
+    "login": "aboyle@eskolta.org",
+    "Password": "test",
+    "Email": "aboyle@eskolta.org",
+    "Name": "Aaron Boyle"
+  },
+  {
+    "admin_id":1,
+    "login": "aburke2@strongschools.nyc.gov",
+    "Password": "test",
+    "Email": "aburke2@strongschools.nyc.gov",
+    "Name": "Allison Burke"
+  },
+  {
+    "admin_id":1,
+    "login": "Dcopeland@strongschools.nyc.gov",
+    "Password": "test",
+    "Email": "Dcopeland@strongschools.nyc.gov",
+    "Name": "Denise Copeland"
+  },
+  {
+    "admin_id":1,
+    "login": "Fmulcahy@strongschools.nyc.gov",
+    "Password": "test",
+    "Email": "Fmulcahy@strongschools.nyc.gov",
+    "Name": "Fiona Mulcahy"
+  },
+  {
+    "admin_id":1,
+    "login": "Jgrunin@strongschools.nyc.gov",
+    "Password": "test",
+    "Email": "Jgrunin@strongschools.nyc.gov",
+    "Name": "Jen Grunin"
+  },
+  {
+    "admin_id":1,
+    "login": "Jsteckel@strongschools.nyc.gov",
+    "Password": "test",
+    "Email": "Jsteckel@strongschools.nyc.gov",
+    "Name": "Josh Steckel"
+  },
+  {
+    "admin_id":1,
+    "login": "Khall@strongschools.nyc.gov",
+    "Password": "test",
+    "Email": "Khall@strongschools.nyc.gov",
+    "Name": "Kim Hall"
+  },
+  {
+    "admin_id":1,
+    "login": "MCastillo8@strongschools.nyc.gov",
+    "Password": "test",
+    "Email": "MCastillo8@strongschools.nyc.gov",
+    "Name": "Marisa Castillo"
+  },
+  {
+    "admin_id":1,
+    "login": "ndefino@eskolta.org",
+    "Password": "test",
+    "Email": "ndefino@eskolta.org",
+    "Name": "Nicole DeFino"
+  },
+  {
+    "admin_id":1,
+    "login": "NFerizGordon@strongschools.nyc.gov",
+    "Password": "test",
+    "Email": "NFerizGordon@strongschools.nyc.gov",
+    "Name": "Norma Feriz Gordon"
+  },
+  {
+    "admin_id":1,
+    "login": "RJohnson28@strongschools.nyc.gov",
+    "Password": "test",
+    "Email": "RJohnson28@strongschools.nyc.gov",
+    "Name": "Raymond Johnson"
+  },
+  {
+    "admin_id":1,
+    "login": "Smikolich@strongschools.nyc.gov",
+    "Password": "test",
+    "Email": "Smikolich@strongschools.nyc.gov",
+    "Name": "Simone Mikolich"
+  },
+  {
+    "admin_id":1,
+    "login": "ZSantiago2@strongschools.nyc.gov",
+    "Password": "test",
+    "Email": "ZSantiago2@strongschools.nyc.gov",
+    "Name": "Zee Santiago"
+  }
+]
