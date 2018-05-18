@@ -3,7 +3,7 @@ class CoachLogsController < ApiController
 
   # GET /coach_logs
   def index
-    @coach_logs = CoachLog.all
+    @coach_logs = CoachLog.all.includes(:coach)
 
     render json: @coach_logs
   end

@@ -13,6 +13,11 @@ class SchoolsController < ApplicationController
     render json: @school
   end
 
+  def coachlogadmin
+    coachlogadmin = CoachLog.all
+    render json: { coachlogs: coachlogadmin }
+  end
+
   # POST /schools
   def create
     @school = School.new(school_params)

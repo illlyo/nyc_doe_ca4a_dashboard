@@ -2,16 +2,30 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3001",
   "dependencies": {
+    "d3": "4.13",
+    "joi": "12",
+    "joi-validation-strategy": "^0.3.3",
+    "moment": "^2.22.1",
+    "radium": "^0.24.0",
     "react": "^16.3.2",
+    "react-d3-basic": "^1.6.11",
+    "react-d3-components": "^0.9.1",
+    "react-d3-speedometer": "^0.3.2",
+    "react-d3-tooltip": "^1.4.14",
     "react-dom": "^16.3.2",
-    "react-scripts": "1.1.4"
+    "react-easy-chart": "^1.0.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.4",
+    "react-stepzilla": "^4.7.2",
+    "react-validation-mixin": "^5.4.0",
+    "rumble-charts": "^2.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
-  }
+  },
+  "proxy": "http://localhost:3001"
 }

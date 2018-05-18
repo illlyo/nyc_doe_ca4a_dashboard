@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "foreman": "^2.0.0",
+    "react": "^16.3.2",
+    "react-scripts": "^1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "name": "ca4a_api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Ileana Ordonez <ileana.s.ordonez@gmail.com>",
+  "license": "MIT"
+}
