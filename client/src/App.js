@@ -12,7 +12,7 @@ import IntervisitationQuestionnaire from './components/IntervisitationQuestionna
 import Questionnaire from './components/Questionnaire.jsx';
 import SchoolData from './components/SchoolData';
 import Results from './components/Results.jsx';
-import FilteredResults from './components/FilteredResults';
+import FilteredResults from './components/Admin/FilteredResults';
 import Controller from './components/Admin/Controller.jsx';
 import './App.css';
 

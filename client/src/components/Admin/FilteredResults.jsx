@@ -1,7 +1,11 @@
 import React from 'react';
-import Auth from '../modules/Auth';
+import Auth from '../../modules/Auth';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import CardHeader from '@material-ui/core/CardHeader';
+
 import FilteredResultsComp from './FilteredResultsComp.jsx';
-import CalendarHeatmap from './Charts/CalendarMap.jsx';
+import CalendarHeatmap from '../Charts/CalendarMap.jsx';
 import * as d3 from 'd3';
 
 class FilteredResults extends React.Component {
@@ -82,7 +86,9 @@ class FilteredResults extends React.Component {
   }
 
   render() {
-    return (<div>
+    return (<Card>
+      <CardHeader title="Total Results" />
+      <CardContent>
       {
         (this.state.coachLogResultsLoaded)
           ? <div className="filterResults-chart-org">
@@ -90,7 +96,6 @@ class FilteredResults extends React.Component {
                   "display" : "inherit",
                   "marginTop" : "5px"
                 }}>
-                <h1>Total Results</h1>
                 <button type="button" class="btn btn-default btn-sm" onClick={this.printPage}>
                   <span class="glyphicon glyphicon-print"></span>
                   <i class="fa fa-print"></i>
@@ -117,7 +122,8 @@ class FilteredResults extends React.Component {
           ? <FilteredResultsComp schoolData={this.state.schoolDataFiltered} coachLogResultsFiltered={this.state.coachLogResultsFiltered}/>
           : " "
       }
-    </div>)
+      </CardContent>
+    </Card>)
   }
 
 }
