@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Link, Redirect, Route } from 'react-router-dom';
+
 import Auth from './modules/Auth';
+import AdminAuth from './modules/Auth';
+
 import DashNav from './components/DashNav.jsx';
 import Nav from './components/Nav';
 import Login from './components/Login.jsx';
+import AdminLogin from './components/AdminLogin.jsx';
 import IntervisitationQuestionnaire from './components/IntervisitationQuestionnaire.jsx';
 import Questionnaire from './components/Questionnaire.jsx';
 import SchoolData from './components/SchoolData';
 import Results from './components/Results.jsx';
 import FilteredResults from './components/FilteredResults';
-
-import Step1 from './components/FormQuestions/Step1.jsx';
+import Controller from './components/Admin/Controller.jsx';
 import './App.css';
 
 class App extends Component {
@@ -18,12 +21,15 @@ class App extends Component {
     super(props)
     this.state = {
       auth: Auth.isUserAuthenticated(),
+      adminAuth: AdminAuth.isUserAuthenticated(),
       username: '',
       password: '',
     }
     this.handleLoginSubmit = this.handleLoginSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
+    this.handleAdminLoginSubmit = this.handleAdminLoginSubmit.bind(this);
+    this.handleAdminLogout = this.handleAdminLogout.bind(this);
   }
 
     handleChange(e) {
@@ -79,6 +85,51 @@ class App extends Component {
         })
       })
     }
+    
+    handleAdminLoginSubmit(e, data){
+      e.preventDefault();
+      console.log(data);
+      fetch('/admin-login', {
+        method: 'POST',
+        body: JSON.stringify({
+        username: this.state.username,
+        password: this.state.password,
+      }),
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      }).then(res => res.json())
+        .then(res => {
+          console.log(res);
+          if (res.token) {
+            AdminAuth.authenticateToken(res.token);
+            this.setState({
+              adminAuth: AdminAuth.isUserAuthenticated(),
+              username: '',
+              password: '',
+            })
+          }
+        }).catch(err => {
+          console.log(err)
+        })
+    }
+
+    handleAdminLogout(){
+      fetch('/admin-logout', {
+        method: 'DELETE',
+        headers: {
+          token: AdminAuth.getToken(),
+          'Authorization': `Token ${Auth.getToken()}`,
+        }
+      }).then(res => {
+        AdminAuth.deauthenticateUser();
+        this.setState({
+          adminAuth: AdminAuth.isUserAuthenticated(),
+          username: '',
+          password: '',
+        })
+      })
+    }
 
   render() {
     return (
@@ -96,6 +147,15 @@ class App extends Component {
                                     username={this.state.username}
                                     password={this.state.password}
                                     />))} />
+              <Route exact path="/react-admin" render={() => (this.state.adminAuth ?
+                             (<Controller />)
+                             :
+                             (<AdminLogin handleAdminLoginSubmit={this.handleAdminLoginSubmit}
+                                          handleChange={this.handleChange}
+                                          adminAuth={this.state.adminAuth}
+                                          username={this.state.username}
+                                          password={this.state.password}
+                                          />))} />     
               <Route exact path="/dash-nav" render={() => (this.state.auth ?
                             (<DashNav />)
                             :

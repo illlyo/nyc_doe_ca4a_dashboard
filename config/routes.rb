@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   post '/login' => "sessions#create"
   delete '/logout' => "sessions#destroy"
+  post '/admin-login' => "react_admin_sessions#create"
+  delete '/admin-logout' => "react_admin_sessions#destroy"
   get '/profile' => 'coaches#profile'
   get '/school-profile' => 'coaches#schoolprofile'
   get '/coachlogs' => 'schools#coachlogadmin'

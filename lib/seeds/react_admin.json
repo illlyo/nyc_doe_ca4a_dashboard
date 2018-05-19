@@ -1,0 +1,9 @@
+[
+  {
+    "admin_id":1,
+    "login": "admin@admin.com",
+    "Password": "admin",
+    "Email": "admin@admin.com",
+    "Name": "Professional Admin"
+  }
+]

@@ -120,3 +120,13 @@ previousintervisitlogs.each do |key|
     coach_id: key["coach"]
   )
 end
+
+reactAdmin = ActiveSupport::JSON.decode(File.read(Rails.root.join('lib', 'seeds', 'react_admin.json')))
+reactAdmin.each do |key|
+    ReactAdmin.create!(
+      username: key['login'],
+      password: key['Password'],
+      email: key['Email'],
+      name: key['Name']
+    )
+end

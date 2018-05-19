@@ -5,12 +5,16 @@ class ApiController < ActionController::API
       authenticate_token || render_unauthorized("Access denied")
     end
 
+    def require_admin_login
+        authenticate_admin_token || render_unauthorized("Access denied")
+      end
+
     def current_coach
       @current_coach ||= authenticate_token
     end
 
     def current_admin
-      @current_admin ||= authenticate_token
+      @current_admin ||= authenticate_admin_token
     end
 
     protected
@@ -21,6 +25,12 @@ class ApiController < ActionController::API
     end
 
     private
+
+    def authenticate_admin_token
+      authenticate_with_http_token do | token, options |
+      ReactAdmin.find_by(auth_token: token)
+      end
+    end
 
     def authenticate_token
       authenticate_with_http_token do | token, options |

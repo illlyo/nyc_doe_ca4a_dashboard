@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Login = props => {
+const AdminLogin = props => {
 
-  return (<form onSubmit={props.handleLoginSubmit}>
-    <h1>Login Portal:</h1>
+  return (<form onSubmit={props.handleAdminLoginSubmit}>
+    <h1>Admin Login Portal:</h1>
     <ul className="form-style-1">
       <li>
         <label>Email
@@ -26,4 +26,4 @@ const Login = props => {
   </form>)
 }
 
-export default Login;
+export default AdminLogin;
