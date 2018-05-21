@@ -1,77 +1,35 @@
-import React, {Component} from 'react';
-import Promise from 'promise';
-import Auth from '../../modules/Auth';
+import React from 'react';
+import Auth from '../modules/Auth';
 
-export default class Step8 extends Component {
+
+export default class Step8 extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       saving: false
     };
-
-    this.isValidated = this.isValidated.bind(this);
+  }
+  componentDidMount() {
+    fetch('/profile', {
+      method: 'GET',
+      headers: {
+        token: Auth.getToken(),
+        'Authorization': `Token ${Auth.getToken()}`
+      }
+    }).then(res => res.json()).then(res => {
+      this.setState({
+        coachLogResults: res.coach_logs,
+        coachLogRecentResult: [res.coach_logs[res.coach_logs.length - 1]],
+        coachLogResultsLoaded: true
+      })
+      console.log(this.state.coachLogRecentResult[0].coach_name)
+    }).catch(err => console.log(err));
   }
 
-  componentDidMount() {}
-
-  componentWillUnmount() {}
-
-  // This review screen had the 'Save' button, on clicking this is called
-  isValidated() {
-    // typically this method needs to return true or false (to indicate if the local forms are validated, so StepZilla can move to the next step),
-    // but in this example we simulate an ajax request which is async. In the case of async validation or server saving etc. return a Promise and StepZilla will wait
-    // ... for the resolve() to work out if we can move to the next step
-    // So here are the rules:
-    // ~~~~~~~~~~~~~~~~~~~~~~~~
-    // SYNC action (e.g. local JS form validation).. if you return:
-    // true/undefined: validation has passed. Move to next step.
-    // false: validation failed. Stay on current step
-    // ~~~~~~~~~~~~~~~~~~~~~~~~
-    // ASYNC return (server side validation or saving data to server etc).. you need to return a Promise which can resolve like so:
-    // resolve(): validation/save has passed. Move to next step.
-    // reject(): validation/save failed. Stay on current step
-
-    this.setState({saving: true});
-
-    fetch('/coach_logs', {
-       method: 'POST',
-       headers: {
-         'Content-Type': 'application/json',
-         token: Auth.getToken(),
-         'Authorization': `Token ${Auth.getToken()}`,
-       },
-       body: JSON.stringify({
-         coach_log: this.props.getStore(),
-       }),
-     }).then(res => res.json())
-       .then(res => {
-         console.log(res);
-       }).catch(err => console.log(err));
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        this.setState({saving: true});
-
-        this.props.updateStore({savedToCloud: true}); // Update store here (this is just an example, in reality you will do it via redux or flux)
-        // call resolve() to indicate that server validation or other aync method was a success.
-        // ... only then will it move to the next step. reject() will indicate a fail
-        resolve();
-        // reject();  or reject
-      }, 2000);
-    });
-  }
-
-  jumpToStep(toStep) {
-    // We can explicitly move to a step (we -1 as its a zero based index)
-    this.props.jumpToStep(toStep - 1); // The StepZilla library injects this jumpToStep utility into each component
-  }
-
-  render() {
-    const savingCls = this.state.saving
-      ? 'saving col-md-12 show'
-      : 'saving col-md-12 hide';
-
-    return (<div className="step step5 review">
+renderFilteredResults(){
+  return(
+    <div className="step step5 review">
       <div className="row">
         <form id="Form" className="form-horizontal">
           <div className="form-group">
@@ -385,6 +343,27 @@ export default class Step8 extends Component {
           </div>
         </form>
       </div>
-    </div>)
-  }
+    </div>
+  )
+}
+
+  render(){
+return (
+  <div className="search-div">
+    <p>Search By School:</p>
+    <select >
+      <option value='0'>Select here
+      </option>
+      {this.state.coachLogResultsLoaded ?
+
+        this.state.coachLogResults.map(res => {
+          return (<option key={res[0]} value={res[1]}>{res.school_visited}</option>)
+        })
+
+      :
+      ''}
+    </select>
+  </div>
+  )
+}
 }

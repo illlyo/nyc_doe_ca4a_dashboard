@@ -87,41 +87,41 @@ class FilteredResults extends React.Component {
 
   render() {
     return (<Card>
-      <CardHeader title="Total Results" />
+      <CardHeader title="Total Results"/>
       <CardContent>
-      {
-        (this.state.coachLogResultsLoaded)
-          ? <div className="filterResults-chart-org">
-              <span classname="filtered-results-total-results-title" style={{
-                  "display" : "inherit",
-                  "marginTop" : "5px"
-                }}>
-                <button type="button" class="btn btn-default btn-sm" onClick={this.printPage}>
-                  <span class="glyphicon glyphicon-print"></span>
-                  <i class="fa fa-print"></i>
-                </button>
-              </span>
-              <div className="search-div">
-                <p>Search By Coach:</p>
-                <select onChange={this.handleCoachSelect} onMouseDown={this.handleUnselect}>
-                  <option value='0'>All
-                  </option>
-                  {
-                    this.state.coachLogCoachNameFiltered.map(res => {
-                      return (<option value={res[1]}>{res[0]}</option>)
-                    })
-                  }
-                </select>
+        {
+          (this.state.coachLogResultsLoaded)
+            ? <div className="filterResults-chart-org">
+                <span className="filtered-results-total-results-title" style={{
+                    "display" : "inherit",
+                    "marginTop" : "5px"
+                  }}>
+                  <button type="button" className="btn btn-default btn-sm" onClick={this.printPage}>
+                    <span className="glyphicon glyphicon-print"></span>
+                    <i className="fa fa-print"></i>
+                  </button>
+                </span>
+                <div className="search-div">
+                  <p>Search By Coach:</p>
+                  <select onChange={this.handleCoachSelect} onMouseDown={this.handleUnselect}>
+                    <option value='0'>All
+                    </option>
+                    {
+                      this.state.coachLogCoachNameFiltered.map(res => {
+                        return (<option key={res[0]} value={res[1]}>{res[0]}</option>)
+                      })
+                    }
+                  </select>
+                </div>
+                <CalendarHeatmap data={this.state.data}/>
               </div>
-              <CalendarHeatmap data={this.state.data}/>
-            </div>
-          : <p>Loading...</p>
-      }
-      {
-        (this.state.coachLogResultsFilteredLoaded)
-          ? <FilteredResultsComp schoolData={this.state.schoolDataFiltered} coachLogResultsFiltered={this.state.coachLogResultsFiltered}/>
-          : " "
-      }
+            : <p>Loading...</p>
+        }
+        {
+          (this.state.coachLogResultsFilteredLoaded)
+            ? <FilteredResultsComp schoolData={this.state.schoolDataFiltered} coachLogResultsFiltered={this.state.coachLogResultsFiltered}/>
+            : " "
+        }
       </CardContent>
     </Card>)
   }

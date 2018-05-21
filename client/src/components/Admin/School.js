@@ -1,7 +1,7 @@
 import React from 'react';
 import { List, Datagrid, TextField, ReferenceField, Edit, EditButton, SimpleForm, DisabledInput, ReferenceInput, SelectInput, TextInput, LongTextInput, Create, Filter } from 'react-admin';
 
-const PostFilter = (props) => (
+const SchoolFilter = (props) => (
     <Filter {...props}>
         <TextInput label="Search" source="q" alwaysOn />
         <ReferenceInput label="User" source="userId" reference="users" allowEmpty>
@@ -10,8 +10,8 @@ const PostFilter = (props) => (
     </Filter>
 );
 
-export const PostList = (props) => (
-    <List {...props} filters={<PostFilter />} >
+export const SchoolList = (props) => (
+    <List {...props} filters={<SchoolFilter />} >
         <Datagrid>
             <TextField label="stuff" source="id" />
             <ReferenceField label="User" source="userId" reference="users">
@@ -24,12 +24,12 @@ export const PostList = (props) => (
     </List>
 );
 
-const PostTitle = ({ record }) => {
-    return <span>Post {record ? `"${record.title}"` : ''}</span>;
+const SchoolTitle = ({ record }) => {
+    return <span>School {record ? `"${record.title}"` : ''}</span>;
 };
 
-export const PostEdit = (props) => (
-    <Edit title={<PostTitle />} {...props}>
+export const SchoolEdit = (props) => (
+    <Edit title={<SchoolTitle />} {...props}>
         <SimpleForm>
             <DisabledInput source="id" />
             <ReferenceInput label="User" source="userId" reference="users">
@@ -41,7 +41,7 @@ export const PostEdit = (props) => (
     </Edit>
 );
 
-export const PostCreate = (props) => (
+export const SchoolCreate = (props) => (
     <Create {...props}>
         <SimpleForm>
             <ReferenceInput label="User" source="userId" reference="users">

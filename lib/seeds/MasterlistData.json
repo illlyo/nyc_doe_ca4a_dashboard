@@ -6992,5 +6992,31 @@
     "Note": "",
     "Principal Name (LCGMS)": "Grecian Harrison",
     "Column1": "Grecian Harrison"
+  },
+  {
+    "DBN": "test",
+    "Location Name": "Test School",
+    "Cohort": "Cohort 1",
+    "CA4A Coach": "Test Coach",
+    "admin_id":1,
+    "coach_id": 14,
+    "Location Type Description": "General Academic",
+    "Building Code": "Q455",
+    "LCGMS Name": "Test",
+    "First Name": "Test",
+    "Last Name": "Test",
+    "Principal Email": "JFICALO@schools.nyc.gov",
+    "Principal Phone Number": "718-595-8400",
+    "Address": "48-01 90 STREET QUEENS, NY 11373",
+    "Superintendent": "LINDSEY, ELAINE",
+    "Session": "Session 1",
+    "Year Attended": 2016,
+    "Attendance Flag": "",
+    "2016-17 Allocation": "$70,000.00",
+    "FSF Proj Enroll 2017-18": 1722,
+    "2017-18 Allocation": "$65,000.00",
+    "Note": "",
+    "Principal Name (LCGMS)": "JOHN FICALORA",
+    "Column1": "John Ficalora"
   }
 ]

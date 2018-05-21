@@ -1,17 +1,18 @@
 import React from 'react';
-import {Admin, Resource} from 'react-admin';
-import jsonServerProvider from 'ra-data-json-server';
+import { fetchUtils, Admin, Resource} from 'react-admin';
+import dataProvider from './dataProvider';
+import simpleRestClient from 'ra-data-simple-rest';
 
-import { PostList, PostEdit, PostCreate } from './Post';
+import { SchoolList, SchoolEdit, SchoolCreate } from './School';
 import { UsersList, UsersEdit, UsersCreate } from './User';
-import FilteredResults from './FilteredResults.jsx';
+import { CoachlogList, CoachlogEdit, CoachlogCreate } from './Coachlog';
+
+import FilteredResults from './FilteredResults.jsx'
 import UserIcon from '@material-ui/icons/Group';
 
-const dataProvider = jsonServerProvider('http://jsonplaceholder.typicode.com');
 
-const Controller = () => <Admin dashboard={FilteredResults} dataProvider={dataProvider}>
-                          <Resource name="posts" list={PostList} edit={PostEdit} create={PostCreate} />
-                          <Resource name="users" list={UsersList} icon={UserIcon} edit={PostEdit} create={PostCreate} />
+const Controller = () => <Admin dashboard={FilteredResults} dataProvider={dataProvider} >
+                          <Resource name="coach_logs" list={CoachlogList} edit={CoachlogEdit} create={CoachlogCreate} />
                          </Admin>;
 
 export default Controller;

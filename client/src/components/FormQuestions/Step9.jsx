@@ -26,8 +26,8 @@ export default class Step9 extends Component {
         <form id="Form" className="form-horizontal">
           <div className="form-group">
             <span>
-              <button type="button" class="btn btn-default btn-sm" onClick={this.printPage.bind(this)}>
-                <i class="fa fa-print"></i>
+              <button type="button" className="btn btn-default btn-sm" onClick={this.printPage.bind(this)}>
+                <i className="fa fa-print"></i>
               </button>
             </span>
             <label className="col-md-12 control-label">

@@ -207,6 +207,10 @@ anymatch@^2.0.0:
     micromatch "^3.1.4"
     normalize-path "^2.1.1"
 
+aor-jsonapi-client@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/aor-jsonapi-client/-/aor-jsonapi-client-0.2.0.tgz#0aff3d43e3a88aa387412d70d983df11c9cbd20b"
+
 append-transform@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/append-transform/-/append-transform-0.4.0.tgz#d76ebf8ca94d276e247a36bad44a4b74ab611991"
@@ -6408,6 +6412,13 @@ ra-core@^2.0.0:
 ra-data-json-server@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ra-data-json-server/-/ra-data-json-server-2.0.0.tgz#fd84e2b577ddc725c40f58afcdc761fcb712e1e4"
+  dependencies:
+    query-string "~5.1.1"
+    react-admin "^2.0.0"
+
+ra-data-simple-rest@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/ra-data-simple-rest/-/ra-data-simple-rest-2.0.0.tgz#ad6b9798fd3a16b159172d71b405e17f74012fe6"
   dependencies:
     query-string "~5.1.1"
     react-admin "^2.0.0"

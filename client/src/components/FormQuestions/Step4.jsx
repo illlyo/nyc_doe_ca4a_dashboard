@@ -176,7 +176,6 @@ class Step4 extends React.Component {
                         ? (this.state.coachLogRecentResult[0].coach_name)
                         : (' ')
                     }'s Log</h1>
-                  <form>
                     <div className="section">
                       <span>13</span>Were the goal(s) for today's visit met?</div>
                     <div className="inner-wrap">
@@ -209,7 +208,6 @@ class Step4 extends React.Component {
                         <div className={notValidClasses.rate_learning_trajectory_explainedValGrpCls}>{this.state.rate_learning_trajectory_explainedValMsg}</div>
                       </div>
                     </div>
-                  </form>
                 </div>
               </div>
             </div>

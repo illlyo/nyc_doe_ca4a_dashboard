@@ -12,6 +12,7 @@ import IntervisitationQuestionnaire from './components/IntervisitationQuestionna
 import Questionnaire from './components/Questionnaire.jsx';
 import SchoolData from './components/SchoolData';
 import Results from './components/Results.jsx';
+import PreviousLogs from './components/PreviousLogs.jsx';
 import FilteredResults from './components/Admin/FilteredResults';
 import Controller from './components/Admin/Controller.jsx';
 import './App.css';
@@ -179,7 +180,7 @@ class App extends Component {
               <Route exact path="/schools" render={() =>
                             <SchoolData />} />
               <Route exact path="/results" render={() =>
-                            <FilteredResults />} />
+                            <PreviousLogs />} />
             </Switch>
 
             </div>

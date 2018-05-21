@@ -89,5 +89,12 @@
     "Password": "test",
     "Email": "ZSantiago2@strongschools.nyc.gov",
     "Name": "Zee Santiago"
+  },
+  {
+    "admin_id":1,
+    "login": "test@test.com",
+    "Password": "test",
+    "Email": "test@test.com",
+    "Name": "Test Coach"
   }
 ]
