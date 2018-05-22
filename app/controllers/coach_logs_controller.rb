@@ -35,6 +35,7 @@ class CoachLogsController < ApiController
 
   # DELETE /coach_logs/1
   def destroy
+    @coach_log= CoachLog.find(params[:id])
     @coach_log.destroy
   end
 

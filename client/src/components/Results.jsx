@@ -1,5 +1,6 @@
 import React from 'react';
 import Auth from '../modules/Auth';
+import moment from 'moment';
 
 import Bar from './Charts/Timescale/BarChart.jsx';
 import ThisPieChart from './Charts/Timescale/PieChart.jsx';
@@ -94,7 +95,7 @@ class Results extends React.Component {
               {res.school_visited}</span>
             <br></br>
             <h4 className="review-header-question">Date of visit:</h4>
-            <span className="review-response">{res.date_of_visit}</span>
+            <span className="review-response">{moment(res.date_of_visit).format("MMM Do YYYY")}</span>
 
             <h3 className="review-header-question">What were the objectives of today's visit?</h3>
             <span className="review-response">{res.objectives_of_visit}</span>

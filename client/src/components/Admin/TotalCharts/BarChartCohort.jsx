@@ -1,6 +1,4 @@
 import React from 'react';
-import {WIDTH, VB_WIDTH, COLORS} from './const.js';
-import * as d3 from 'd3';
 import {BarChart, Legend} from 'react-easy-chart';
 
 class BarChartCohort extends React.Component {
@@ -64,34 +62,6 @@ class BarChartCohort extends React.Component {
   }
 
   render() {
-    const defaultStyles = {
-      '.legend': {
-        'list-style': 'none',
-        margin: 0,
-        padding: 0
-      },
-      '.legend li': {
-        display: 'block',
-        lineHeight: '24px',
-        marginRight: '24px',
-        marginBottom: '6px',
-        paddingLeft: '24px',
-        position: 'relative'
-      },
-      '.legend li.horizontal': {
-        display: 'inline-block'
-      },
-      '.legend .icon': {
-        width: '12px',
-        height: '12px',
-        background: 'red',
-        borderRadius: '6px',
-        position: 'absolute',
-        left: '0',
-        top: '50%',
-        marginTop: '-6px'
-      }
-    }
     const customStyle = {
       '.legend': {
         backgroundColor: '#f9f9f9',

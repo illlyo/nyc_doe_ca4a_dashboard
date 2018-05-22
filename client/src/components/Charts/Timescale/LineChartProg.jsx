@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Legend, LineChart} from 'react-easy-chart';
+import {LineChart} from 'react-easy-chart';
 
 class LineChartProg extends Component {
   constructor(props) {

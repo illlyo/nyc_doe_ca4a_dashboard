@@ -65,29 +65,6 @@ class Speedometer extends Component {
   }
 
   render() {
-    const config = [
-      {
-        color: '#6ad72d'
-      }, {
-        color: '#aee228'
-      }, {
-        color: '#ecdb23'
-      }, {
-        color: '#f6961e'
-      }, {
-        color: '#ff471a'
-      }
-    ]
-    const customStyle = {
-      '.legend': {
-        backgroundColor: '#f9f9f9',
-        border: '1px solid #e5e5e5',
-        borderRadius: '12px',
-        fontSize: '.9em',
-        maxWidth: '200px',
-        padding: '3px'
-      }
-    }
     return (<div>
       <div className="speedometer">
         <ReactSpeedometer value={this.state.data.values[this.state.data.values.length - 1].y} minValue={0} maxValue={5} startColor={"#ffbb78"} endColor={"#ffbb78"} needleTransitionDuration={4000} needleTransition="easeElastic" currentValueText="Expectations of Goals"/>
