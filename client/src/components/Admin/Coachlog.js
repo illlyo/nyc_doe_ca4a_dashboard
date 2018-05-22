@@ -6,7 +6,6 @@ export const CoachlogList = (props) => (
     <List {...props} >
         <Datagrid>
             <TextField label="stuff" source="id" />
-
             <TextField source="school_visited" />
             <TextField source="objectives_of_visit" />
             <EditButton />

@@ -15,6 +15,10 @@ class SessionsController < ApiController
     head :ok
   end
 
+  def test
+  render json: { message: 'ok' }
+  end
+
   private
 
   def send_token_for_valid_login_of(coach)

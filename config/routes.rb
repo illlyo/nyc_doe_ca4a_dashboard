@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get '/school-profile' => 'coaches#schoolprofile'
   get '/coachlogs' => 'schools#coachlogadmin'
 
+  get '/session-test' => "sessions#test"
+
   resources :coaches
   resources :coach_logs
   resources :intervisitation_logs

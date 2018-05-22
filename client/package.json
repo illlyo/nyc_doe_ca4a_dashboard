@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "admin-on-rest": "^1.4.1",
     "aor-jsonapi-client": "^0.2.0",
+    "aor-postgrest-client": "^0.2.3",
     "d3": "4.13",
     "joi": "12",
     "joi-validation-strategy": "^0.3.3",

@@ -23,10 +23,8 @@ const UsersTitle = ({record}) => {
 export const UsersEdit = (props) => ( <Edit title = { < UsersTitle / >} { ...props} >
                                         <SimpleForm >
                                           <DisabledInput source = "id" / >
-                                            <TextInput source = "title" / >
                                             <TextInput source = "teaser" options = {{multiLine: true}} /> 
                                               <LongTextInput source = "body" / >
-                                              <DateInput label = "Publication date" source = "published_at" / >
                                             <TextInput source = "average_note" / >
                                           <DisabledInput label = "Nb views" source = "views" / >
                                         </SimpleForm> 
@@ -36,10 +34,8 @@ export const UsersEdit = (props) => ( <Edit title = { < UsersTitle / >} { ...pro
 export const UsersCreate = (props) => ( 
                                       <Create title = "Create a User" { ...props} >
                                           <SimpleForm >
-                                            <TextInput source = "title" / >
                                             <TextInput source = "teaser" options = {{multiLine: true}} /> 
                                               <LongTextInput source = "body" / >
-                                            <TextInput label = "Publication date" source = "published_at" / >
                                             <TextInput source = "average_note" / >
                                           </SimpleForm> 
                                         </Create>
