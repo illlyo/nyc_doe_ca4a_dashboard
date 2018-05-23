@@ -73,7 +73,7 @@ class Questionnaire extends React.Component {
 
     this.sampleStore = {
       cancelled: '',
-      coach_id: 14,
+      coach_id: 0,
       date_of_visit: '',
       length_of_visit: '',
       objectives_of_visit: '',
@@ -126,21 +126,7 @@ class Questionnaire extends React.Component {
   }
 
   componentDidMount() {
-    fetch('/profile', {
-      method: 'GET',
-      headers: {
-        token: Auth.getToken(),
-        'Authorization': `Token ${Auth.getToken()}`,
-      }
-    })
-    .then(res => res.json())
-    .then(res => {
-      this.setState({
-        coach_id: res.coach_logs[0].coach_id,
-        coach_Loaded: true,
-      })
-          console.log(this.state.coach_id.coach_logs[0].coach_id);
-    }).catch(err => console.log(err));
+
   }
 
   componentWillUnmount() {}

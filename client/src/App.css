@@ -765,6 +765,33 @@ border: 1px solid #BEBEBE;
 	max-width: 800px;
 	margin: 0;
 }
+.parent-search-div-previous-logs{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	max-width: 800px;
+	margin: auto;
+}
+
+.search-div-previous-logs{
+	display: flex;
+	flex-direction: column;
+	  justify-content: center;
+		max-width: 860px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 7px;
+  margin:auto;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+}
+.search-div-previous-logs>select{
+	max-width: 300px;
+}
 
 .search-div{
 	display: flex;
@@ -991,4 +1018,7 @@ b{
 }
 .dashboard-h2-alignment{
 	text-align: left;
+}
+.inner-wrap-hidden{
+	display: none;
 }

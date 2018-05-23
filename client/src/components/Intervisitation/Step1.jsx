@@ -9,6 +9,7 @@ class Step1 extends Component {
       intervisitationLogResults: null,
       intervisitationLogRecentResult: null,
       intervisitationLogResultsLoaded: false,
+      coach_id: props.getStore().coach_id,
       date_visit: props.getStore().date_visit,
       coach_visited: props.getStore().coach_visited,
       school: props.getStore().school,
@@ -30,10 +31,10 @@ class Step1 extends Component {
     }).then(res => res.json()).then(res => {
       this.setState({
         intervisitationLogResults: res.intervisitation_logs,
-        intervisitationLogRecentResult: [res.intervisitation_logs[res.intervisitation_logs.length - 1]],
+        schools: res.schools,
         intervisitationLogResultsLoaded: true
       })
-      console.log(this.state.intervisitationLogRecentResult[0].coach_name)
+      console.log(this.state.schools)
     }).catch(err => console.log(err));
   }
 
@@ -48,7 +49,7 @@ class Step1 extends Component {
     if (Object.keys(validateNewInput).every((k) => {
       return validateNewInput[k] === true
     })) {
-      if (this.props.getStore().date_visit != userInput.date_visit || this.props.getStore().visit_type != userInput.visit_type || this.props.getStore().coach_visited != userInput.coach_visited || this.props.getStore().school != userInput.school || this.props.getStore().feedback != userInput.feedback || this.props.getStore().hoping_to_learn != userInput.hoping_to_learn || this.props.getStore().areas_of_strength != userInput.areas_of_strength || this.props.getStore().areas_for_growth != userInput.areas_for_growth || this.props.getStore().thinking_about != userInput.thinking_about || this.props.getStore().plan_to_tryout != userInput.plan_to_tryout || this.props.getStore().share_with_team != userInput.share_with_team || this.props.getStore().coach_name != userInput.coach_name) { // only update store of something changed
+      if (this.props.getStore().coach_id != userInput.coach_id || this.props.getStore().date_visit != userInput.date_visit || this.props.getStore().visit_type != userInput.visit_type || this.props.getStore().coach_visited != userInput.coach_visited || this.props.getStore().school != userInput.school || this.props.getStore().feedback != userInput.feedback || this.props.getStore().hoping_to_learn != userInput.hoping_to_learn || this.props.getStore().areas_of_strength != userInput.areas_of_strength || this.props.getStore().areas_for_growth != userInput.areas_for_growth || this.props.getStore().thinking_about != userInput.thinking_about || this.props.getStore().plan_to_tryout != userInput.plan_to_tryout || this.props.getStore().share_with_team != userInput.share_with_team || this.props.getStore().coach_name != userInput.coach_name) { // only update store of something changed
         this.props.updateStore({
           ...userInput,
           savedToCloud: false // use this to notify step4 that some changes took place and prompt the user to save again
@@ -73,6 +74,7 @@ class Step1 extends Component {
 
   _validateData(data) {
     return {
+      coach_idVal: (data.coach_id != 0),
       date_visitVal: (data.date_visit != 0),
       coach_visitedVal: (data.coach_visited != 0),
       schoolVal: (data.school != 0),
@@ -83,6 +85,9 @@ class Step1 extends Component {
 
   _validationErrors(val) {
     const errMsgs = {
+      coach_idValMsg: val.coach_idVal
+        ? ''
+        : 'Response required',
       date_visitValMsg: val.date_visitVal
         ? ''
         : 'Response required',
@@ -105,6 +110,7 @@ class Step1 extends Component {
 
   _grabUserInput() {
     return {
+      coach_id: this.refs.coach_id.value,
       date_visit: this.refs.date_visit.value,
       coach_visited: this.refs.coach_visited.value,
       school: this.refs.school.value,
@@ -116,6 +122,12 @@ class Step1 extends Component {
   render() {
     let notValidClasses = {};
 
+    if (typeof this.state.coach_idVal == 'undefined' || this.state.coach_idVal) {
+      notValidClasses.coach_idCls = 'no-error col-md-8';
+    } else {
+      notValidClasses.coach_idCls = 'has-error col-md-8';
+      notValidClasses.coach_idValGrpCls = 'val-err-tooltip';
+    }
     if (typeof this.state.date_visitVal == 'undefined' || this.state.date_visitVal) {
       notValidClasses.date_visitCls = 'no-error col-md-8';
     } else {
@@ -157,7 +169,7 @@ class Step1 extends Component {
             <div className="row content">
               <div className="col-md-12">
                 <div className="form-style-10">
-                  <h1>{this.state.intervisitationLogResultsLoaded ? (this.state.intervisitationLogRecentResult[0].coach_name) : (' ') }s Log</h1>
+                  <h1>{this.state.intervisitationLogResultsLoaded ? (this.state.schools[0].coach_name) : (' ') }s Log</h1>
                   <div className="section">
                     <span>1</span>Date of visit</div>
                   <div className="inner-wrap">
@@ -171,6 +183,19 @@ class Step1 extends Component {
                       </label>
                       <div className={notValidClasses.date_visitValGrpCls}>{this.state.date_visitValMsg}</div>
                     </div>
+                  </div>
+                  <div className="inner-wrap-hidden">
+                      <div className={notValidClasses.coach_idCls}>
+                          <select className="form-control" ref="coach_id" defaultValue={this.state.coach_id} onChange={this.handleSchoolSelect} onBlur={this.validationCheck} >
+                            {this.state.intervisitationLogResultsLoaded ?
+                              this.state.schools.map(res => {
+                                return(
+                                  <option key = {res.id} value={res.coach_id} >{res.coach_id}</option>
+                                )})
+                                : 'loading..' }
+                          </select>
+                        <div className={notValidClasses.coach_idValGrpCls}>{this.state.coach_idValMsg}</div>
+                      </div>
                   </div>
                   <div className="section">
                     <span>2</span>Who did you visit?</div>

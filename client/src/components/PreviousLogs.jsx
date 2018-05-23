@@ -72,8 +72,8 @@ export default class PreviousLogs extends React.Component {
   }
 
   render() {
-    return (<div className="parent-search-div">
-      <div className="search-div">
+    return (<div className="parent-search-div-previous-logs">
+      <div className="search-div-previous-logs">
         <p>Search By Log Entry:</p>
         <select onChange={this.handleCoachLogSelect}>
           <option value='0'>Select here
@@ -95,6 +95,8 @@ export default class PreviousLogs extends React.Component {
 
       </div>
       <button style={{
+          "maxWidth" : "60px",
+          "marginLeft": "80%",
           "float" : "right"
         }} onClick={this.deleteLog}>Delete</button>
     </div>)

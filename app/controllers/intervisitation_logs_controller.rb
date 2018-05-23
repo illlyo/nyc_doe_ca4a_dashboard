@@ -35,6 +35,7 @@ class IntervisitationLogsController < ApiController
 
   # DELETE /intervisitation_logs/1
   def destroy
+    @intervisitation_log= IntervisitationLog.find(params[:id])
     @intervisitation_log.destroy
   end
 
@@ -46,6 +47,18 @@ class IntervisitationLogsController < ApiController
 
     # Only allow a trusted parameter "white list" through.
     def intervisitation_log_params
-      params.fetch(:intervisitation_log, {})
+      params.require(:intervisitation_log).permit(:coach_id,
+         :date_visit,
+         :visit_type,
+         :coach_visited,
+         :school,
+         :feedback,
+         :hoping_to_learn,
+         :areas_of_strength,
+         :areas_for_growth,
+         :thinking_about,
+         :plan_to_tryout,
+         :share_with_team,
+         :coach_name)
     end
 end

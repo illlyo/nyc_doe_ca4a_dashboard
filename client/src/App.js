@@ -12,6 +12,7 @@ import IntervisitationQuestionnaire from './components/IntervisitationQuestionna
 import Questionnaire from './components/Questionnaire.jsx';
 import SchoolData from './components/SchoolData';
 import PreviousLogs from './components/PreviousLogs.jsx';
+import PreviousIntervisitationLogs from './components/PreviousIntervisitationLogs.jsx';
 import Controller from './components/Admin/Controller.jsx';
 import './App.css';
 
@@ -177,6 +178,8 @@ class App extends Component {
                             <IntervisitationQuestionnaire />} />
               <Route exact path="/schools" render={() =>
                             <SchoolData />} />
+              <Route exact path="/intervisitation-results" render={() =>
+                            <PreviousIntervisitationLogs />} />
               <Route exact path="/results" render={() =>
                             <PreviousLogs />} />
             </Switch>

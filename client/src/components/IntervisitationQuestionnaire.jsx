@@ -4,6 +4,7 @@ import Step1 from './Intervisitation/Step1';
 import Step2 from './Intervisitation/Step2';
 import Step3 from './Intervisitation/Step3';
 import Step4 from './Intervisitation/Step4';
+import Step5 from './Intervisitation/Step5';
 
 class IntervisitationOuestionnaire extends React.Component {
   constructor(props) {
@@ -39,7 +40,9 @@ class IntervisitationOuestionnaire extends React.Component {
     };
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+
+  }
 
   componentWillUnmount() {}
 
@@ -76,6 +79,11 @@ class IntervisitationOuestionnaire extends React.Component {
       }, {
         name: 'Step4',
         component: <Step4 getStore={() => (this.getStore())} updateStore={(u) => {
+              this.updateStore(u)
+            }}/>
+      }, {
+        name: 'Step5',
+        component: <Step5 getStore={() => (this.getStore())} updateStore={(u) => {
               this.updateStore(u)
             }}/>
       }

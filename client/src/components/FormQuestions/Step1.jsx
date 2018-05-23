@@ -10,6 +10,7 @@ constructor(props){
     schools: null,
     coachLogRecentResult: null,
     coachLogResultsLoaded: false,
+    coach_id: props.getStore().coach_id,
     school_visited: props.getStore().school_visited,
     date_of_visit: props.getStore().date_of_visit,
     cancelled: props.getStore().date_of_visit,
@@ -38,7 +39,6 @@ constructor(props){
         coachLogRecentResult: [res.coach_logs[res.coach_logs.length-1]],
         coachLogResultsLoaded: true,
       })
-          console.log(this.state.coachLogResults)
     }).catch(err => console.log(err));
   }
 
@@ -71,7 +71,8 @@ constructor(props){
 
     // if full validation passes then save to store and pass as valid
     if (Object.keys(validateNewInput).every((k) => { return validateNewInput[k] === true })) {
-        if (this.props.getStore().date_of_visit != userInput.date_of_visit ||
+        if (this.props.getStore().coach_id != userInput.coach_id ||
+            this.props.getStore().date_of_visit != userInput.date_of_visit ||
             this.props.getStore().school_visited != userInput.school_visited ||
             this.props.getStore().cancelled != userInput.cancelled ) { // only update store of something changed
           this.props.updateStore({
@@ -99,6 +100,7 @@ constructor(props){
 
   _validateData(data) {
    return  {
+     coach_idVal: (data.coach_id != 0),
      date_of_visitVal: (data.date_of_visit != 0),
      school_visitedVal: (data.school_visited != 0),
      cancelledVal: (data.cancelled != 0)
@@ -107,6 +109,7 @@ constructor(props){
 
  _validationErrors(val) {
    const errMsgs = {
+     coach_idValMsg: val.date_of_visitVal ? '' : '*',
      date_of_visitValMsg: val.date_of_visitVal ? '' : '*',
      school_visitedValMsg: val.school_visitedVal ? '' : '*',
      cancelledValMsg: val.cancelledVal ? '' : '*'
@@ -117,6 +120,7 @@ constructor(props){
 
   _grabUserInput() {
     return {
+      coach_id: this.refs.coach_id.value,
       date_of_visit: this.refs.date_of_visit.value,
       school_visited: this.refs.school_visited.value,
       cancelled: this.refs.cancelled.value
@@ -127,6 +131,13 @@ render(){
 
   let notValidClasses = {};
 
+  if (typeof this.state.coach_idVal == 'undefined' || this.state.coach_idVal) {
+    notValidClasses.coach_idCls = 'no-error col-md-8';
+  }
+  else {
+     notValidClasses.coach_idCls = 'has-error col-md-8';
+     notValidClasses.coach_idValGrpCls = 'val-err-tooltip';
+  }
   if (typeof this.state.school_visitedVal == 'undefined' || this.state.school_visitedVal) {
     notValidClasses.school_visitedCls = 'no-error col-md-8';
   }
@@ -174,6 +185,19 @@ return(
                                           : 'loading..' }
                                     </select>
                                   <div className={notValidClasses.school_visitedValGrpCls}>{this.state.school_visitedValMsg}</div>
+                                </div>
+                            </div>
+                            <div className="inner-wrap-hidden">
+                                <div className={notValidClasses.coach_idCls}>
+                                    <select className="form-control" ref="coach_id" defaultValue={this.state.coach_id} onChange={this.handleSchoolSelect} onBlur={this.validationCheck} >
+                                      {this.state.coachLogResultsLoaded ?
+                                        this.state.schools.map(res => {
+                                          return(
+                                            <option key = {res.id} value={res.coach_id} >{res.coach_id}</option>
+                                          )})
+                                          : 'loading..' }
+                                    </select>
+                                  <div className={notValidClasses.coach_idValGrpCls}>{this.state.coach_idValMsg}</div>
                                 </div>
                             </div>
                             <div className="section"><span>2</span>Date of visit</div>

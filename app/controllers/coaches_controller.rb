@@ -29,7 +29,7 @@ class CoachesController < ApiController
   coach_coach_logs = coach.coach_logs
   coach_intervisitation_logs = coach.intervisitation_logs
   coach_schools = coach.schools
-  render json: { coach: { username: coach.username, email: coach.email, name: coach.name }, coach_logs: coach_coach_logs, schools: coach_schools }
+  render json: { coach: { username: coach.username, email: coach.email, name: coach.name }, coach_logs: coach_coach_logs, schools: coach_schools, coach_intervisitation_logs: coach_intervisitation_logs }
 end
 
   # PATCH/PUT /coaches/1

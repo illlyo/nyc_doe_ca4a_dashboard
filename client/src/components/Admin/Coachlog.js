@@ -1,7 +1,6 @@
 import React from 'react';
 import { List, Datagrid, TextField, ReferenceField, Edit, EditButton, SimpleForm, DisabledInput, ReferenceInput, SelectInput, TextInput, LongTextInput, Create, Filter } from 'react-admin';
 
-
 export const CoachlogList = (props) => (
     <List {...props} >
         <Datagrid>
