@@ -10,7 +10,7 @@ class Nav extends React.Component {
   }
 render(){
   return ( <header className="App-header">
-              <Link to="/">
+              <Link exact to="/">
                 <img src={Logo} alt="logo" />
               </Link>
                 { this.props.auth ?

@@ -7,6 +7,8 @@ export const CoachlogList = (props) => (
         <Datagrid>
             <TextField label="id" source="id" />
             <TextField source="school_visited" />
+            <TextField source="coach_name" />
+            <TextField source="cancelled" />
             <TextField source="objectives_of_visit" />
             <EditButton />
         </Datagrid>
@@ -22,6 +24,8 @@ export const CoachlogEdit = (props) => (
         <SimpleForm>
             <DisabledInput source="id" />
             <TextInput source="school_visited" />
+            <TextInput source="coach_name" />
+            <TextInput source="cancelled" />
             <LongTextInput source="objectives_of_visit" />
         </SimpleForm>
     </Edit>
@@ -32,6 +36,8 @@ export const CoachlogCreate = (props) => (
         <SimpleForm>
 
             <TextInput source="school_visited" />
+            <TextInput source="coach_name" />
+            <TextInput source="cancelled" />
             <LongTextInput source="objectives_of_visit" />
         </SimpleForm>
     </Create>
