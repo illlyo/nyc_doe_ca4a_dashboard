@@ -207,7 +207,7 @@ return(
                                            onChange={this.handleOptionChangeNo}
                                            onBlur={this.validationCheck} />No
                                       <div className={notValidClasses.cancelledValGrpCls}>{this.state.cancelledValMsg}</div>
-                                        {this.state.cancelled == 'yes' ? <a onClick={() => {this.props.jumpToStep(4)}}><div className="cancelled-link">If yes, please click here</div></a> : ''}
+                                        {this.state.cancelled == 'yes' ? <a onClick={() => {this.props.jumpToStep(7)}}><div className="cancelled-link">If yes, please click here</div></a> : ''}
                                   </div>
                               </div>
                       </div>

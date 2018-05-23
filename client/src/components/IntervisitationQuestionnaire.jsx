@@ -87,7 +87,7 @@ class IntervisitationOuestionnaire extends React.Component {
                    preventEnterSubmission={true}
                    nextTextOnFinalActionStep={"Save"}
                    hocValidationAppliedTo={[]}
-                   startAtStep={window.sessionStorage.getItem('step') ? parseFloat(window.sessionStorage.getItem('step')) : 0}
+                   startAtStep={0}
                    onStepChange={(step) => window.sessionStorage.setItem('step', step)}/>
       </div>
     </div>)

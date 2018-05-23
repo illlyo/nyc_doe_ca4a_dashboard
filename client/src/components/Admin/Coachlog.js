@@ -5,7 +5,7 @@ import { List, Datagrid, TextField, ReferenceField, Edit, EditButton, SimpleForm
 export const CoachlogList = (props) => (
     <List {...props} >
         <Datagrid>
-            <TextField label="stuff" source="id" />
+            <TextField label="id" source="id" />
             <TextField source="school_visited" />
             <TextField source="objectives_of_visit" />
             <EditButton />
@@ -21,7 +21,6 @@ export const CoachlogEdit = (props) => (
     <Edit title={<CoachlogTitle />} {...props}>
         <SimpleForm>
             <DisabledInput source="id" />
-
             <TextInput source="school_visited" />
             <LongTextInput source="objectives_of_visit" />
         </SimpleForm>

@@ -8,20 +8,27 @@ class DashNav extends React.Component {
   }
 
   render() {
-    return (<div className="dash-nav-div">
-      <Link to="/dashboard">
-        <div className="select-dash-nav">
-          Create New Coach Log
-        </div>
-      </Link>
-      <Link to="/intervisitation-log">
-        <div className="select-dash-nav">Create Intervisitation Log</div>
-      </Link>
-      <Link to="/results">
-        <div className="select-dash-nav">View Previous Logs</div>
-      </Link>
-    </div>);
-  }
+    return (
+      <div className="dash-nav-div">
+        <Link to="/dashboard">
+          <div className="select-dash-nav">
+            Create New Coach Log</div>
+        </Link>
+        <Link to="/intervisitation-log">
+          <div className="select-dash-nav">
+            Create Intervisitation Log</div>
+        </Link>
+        <Link to="/results">
+          <div className="select-dash-nav">
+            View Previous Coach Logs</div>
+        </Link>
+        <Link to="/intervisitation-results">
+          <div className="select-dash-nav">
+            View Previous Intervisitation Logs</div>
+        </Link>
+      </div>
+  );
+ }
 }
 
 export default DashNav;

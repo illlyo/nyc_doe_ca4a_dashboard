@@ -13,7 +13,7 @@ class CalendarHeatmap extends React.Component {
     this.settings = {
       gutter: 5,
       item_gutter: 1,
-      width: 1000,
+      width: 800,
       height: 200,
       item_size: 10,
       label_padding: 40,
@@ -80,7 +80,7 @@ class CalendarHeatmap extends React.Component {
     let colIndex = Math.trunc(dayIndex / 7)
     let numWeeks = colIndex + 1
 
-    this.settings.width = this.container.offsetWidth < 1000 ? 1000 : this.container.offsetWidth
+    this.settings.width = this.container.offsetWidth < 800 ? 800 : this.container.offsetWidth
     this.settings.item_size = ((this.settings.width - this.settings.label_padding) / numWeeks - this.settings.gutter)
     this.settings.height = this.settings.label_padding + 7 * (this.settings.item_size + this.settings.gutter)
     this.svg.attr('width', this.settings.width)

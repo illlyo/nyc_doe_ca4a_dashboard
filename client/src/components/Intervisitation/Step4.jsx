@@ -34,6 +34,21 @@ class Step4 extends Component {
       saving: true
     });
 
+    fetch('/intervisitation_logs', {
+       method: 'POST',
+       headers: {
+         'Content-Type': 'application/json',
+         token: Auth.getToken(),
+         'Authorization': `Token ${Auth.getToken()}`,
+       },
+       body: JSON.stringify({
+         intervisitation_log: this.props.getStore(),
+       }),
+     }).then(res => res.json())
+       .then(res => {
+         console.log(res);
+       }).catch(err => console.log(err));
+
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         this.setState({

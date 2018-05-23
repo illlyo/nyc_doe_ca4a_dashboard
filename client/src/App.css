@@ -717,10 +717,10 @@ a{
 display: flex;
 flex-direction: column;
 justify-content: center;
-align-items: center;
 flex-wrap: wrap;
 max-width: 912px;
 margin: auto;
+border: 1px solid #BEBEBE;
 }
 .filterResults-chart-org-div{
   display: flex;
@@ -759,7 +759,19 @@ margin: auto;
     to   { opacity: 1; }
 }
 
+.parent-search-div{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	max-width: 800px;
+	margin: 0;
+}
+
 .search-div{
+	display: flex;
+	flex-direction: column;
+	  justify-content: center;
+		max-width: 300px;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -977,4 +989,7 @@ b{
 }
 .barchart-prog .x .tick>text{
 	font-size: 8px;
+}
+.dashboard-h2-alignment{
+	text-align: left;
 }

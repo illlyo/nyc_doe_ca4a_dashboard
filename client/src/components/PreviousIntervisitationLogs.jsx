@@ -3,7 +3,7 @@ import Auth from '../modules/Auth';
 import moment from 'moment';
 import PreviousLogComp from './PreviousLogComp';
 
-export default class PreviousLogs extends React.Component {
+export default class PreviousIntervisitationLogs extends React.Component {
   constructor(props) {
     super(props);
 
@@ -31,7 +31,7 @@ export default class PreviousLogs extends React.Component {
         coachLogRecentResult: [res.coach_logs[res.coach_logs.length - 1]],
         coachLogResultsLoaded: true
       })
-      fetch('/coachlogs', {method: 'GET'}).then(res => res.json()).then(res => {
+      fetch('/intervisitation_logs', {method: 'GET'}).then(res => res.json()).then(res => {
         this.setState({coachLogs: res.coachlogs, coachLogsFiltered: res.coachlogs, coachLogsLoaded: true})
         console.log(this.state.coachLogResults.map(res => res.id));
       })
@@ -39,7 +39,7 @@ export default class PreviousLogs extends React.Component {
   }
 
   deleteLog() {
-    fetch(`/coach_logs/${this.state.coachLogResultsFiltered[0].id}`, {
+    fetch(`/intervisitation_logs/${this.state.coachLogResultsFiltered[0].id}`, {
       method: 'DELETE',
       headers: {
         token: Auth.getToken(),
@@ -72,7 +72,7 @@ export default class PreviousLogs extends React.Component {
   }
 
   render() {
-    return (<div className="parent-search-div">
+    return (<div>
       <div className="search-div">
         <p>Search By Log Entry:</p>
         <select onChange={this.handleCoachLogSelect}>
@@ -81,7 +81,8 @@ export default class PreviousLogs extends React.Component {
           {
             this.state.coachLogResultsLoaded
               ? this.state.coachLogResults.map(res => {
-                return (<option key={res.id} value={res.id}>{res.school_visited} visited on {moment(res.date_of_visit).add(1, 'days').calendar()}</option>)
+                return (<option key={res.id} value={res.id}>{res.school_visited}
+                  {moment(res.date_of_visit).format("MMM Do YYYY")}</option>)
               })
 
               : ''

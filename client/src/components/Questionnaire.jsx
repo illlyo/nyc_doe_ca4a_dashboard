@@ -208,9 +208,7 @@ class Questionnaire extends React.Component {
 
     return (<div className='example'>
       <div className='step-progress'>
-        <StepZilla steps={steps} preventEnterSubmission={true} nextTextOnFinalActionStep={"Save"} hocValidationAppliedTo={[]} startAtStep={window.sessionStorage.getItem('step')
-            ? parseFloat(window.sessionStorage.getItem('step'))
-            : 0} onStepChange={(step) => window.sessionStorage.setItem('step', step)}/>
+        <StepZilla steps={steps} preventEnterSubmission={true} nextTextOnFinalActionStep={"Save"} hocValidationAppliedTo={[]} startAtStep={0} onStepChange={(step) => window.sessionStorage.setItem('step', step)}/>
       </div>
     </div>)
   }

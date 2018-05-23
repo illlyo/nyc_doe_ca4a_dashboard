@@ -157,8 +157,7 @@ class Step1 extends Component {
             <div className="row content">
               <div className="col-md-12">
                 <div className="form-style-10">
-                  <h1>*Coach Name Here*<span>*School Name*</span>
-                  </h1>
+                  <h1>{this.state.intervisitationLogResultsLoaded ? (this.state.intervisitationLogRecentResult[0].coach_name) : (' ') }s Log</h1>
                   <div className="section">
                     <span>1</span>Date of visit</div>
                   <div className="inner-wrap">

@@ -95,7 +95,7 @@ class Results extends React.Component {
               {res.school_visited}</span>
             <br></br>
             <h4 className="review-header-question">Date of visit:</h4>
-            <span className="review-response">{moment(res.date_of_visit).format("MMM Do YYYY")}</span>
+            <span className="review-response">{moment(res.date_of_visit).add(1, 'days').calendar()}</span>
 
             <h3 className="review-header-question">What were the objectives of today's visit?</h3>
             <span className="review-response">{res.objectives_of_visit}</span>

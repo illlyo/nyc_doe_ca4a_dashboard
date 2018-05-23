@@ -6,7 +6,7 @@ import CardHeader from '@material-ui/core/CardHeader';
 import FilteredResultsComp from './FilteredResultsComp.jsx';
 import CalendarHeatmap from '../Charts/CalendarMap.jsx';
 import * as d3 from 'd3';
-
+import moment from 'moment';
 class FilteredResults extends React.Component {
   constructor(props) {
     super(props);
@@ -35,19 +35,19 @@ class FilteredResults extends React.Component {
         coachLogResultsLoaded: true,
         data: res.coachlogs.map(res => {
           return {
-            "date": res.date_of_visit,
+            "date": moment(res.date_of_visit).add(1, 'days').calendar(),
             "total": 17164,
             "details": [
               {
                 "name": res.coach_name + " visited " + res.school_visited,
-                "date": res.date_of_visit,
+                "date": moment(res.date_of_visit).add(1, 'days').calendar(),
                 "value": 9192
               }
             ]
           }
         })
       })
-      console.log(this.state.coachLogResults);
+      console.log(moment(this.state.data[0].date).add(1, 'days').calendar());
     })
     fetch('/schools', {method: 'GET'}).then(res => res.json()).then(res => {
       this.setState({schoolData: res, schoolDataLoaded: true})
@@ -90,16 +90,17 @@ class FilteredResults extends React.Component {
       <CardContent>
         {
           (this.state.coachLogResultsLoaded)
-            ? <div className="filterResults-chart-org">
+            ? <div><div className="filterResults-chart-org">
                 <span className="filtered-results-total-results-title" style={{
                     "display" : "inherit",
                     "marginTop" : "5px"
                   }}>
-                  <button type="button" className="btn btn-default btn-sm" onClick={this.printPage}>
-                    <span className="glyphicon glyphicon-print"></span>
-                    <i className="fa fa-print"></i>
-                  </button>
                 </span>
+                <h2 style={{
+                    "textAlign" : "left"
+                  }}>Coach Log Entries by Date:</h2>
+                <CalendarHeatmap data={this.state.data}/>
+                </div>
                 <div className="search-div">
                   <p>Search By Coach:</p>
                   <select onChange={this.handleCoachSelect} onMouseDown={this.handleUnselect}>
@@ -112,8 +113,7 @@ class FilteredResults extends React.Component {
                     }
                   </select>
                 </div>
-                <CalendarHeatmap data={this.state.data}/>
-              </div>
+            </div>
             : <p>Loading...</p>
         }
         {
@@ -121,6 +121,10 @@ class FilteredResults extends React.Component {
             ? <FilteredResultsComp schoolData={this.state.schoolDataFiltered} coachLogResultsFiltered={this.state.coachLogResultsFiltered}/>
             : " "
         }
+        <button type="button" className="btn btn-default btn-sm" onClick={this.printPage}>
+          <span className="glyphicon glyphicon-print"></span>
+          print
+        </button>
       </CardContent>
     </Card>)
   }
