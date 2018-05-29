@@ -8,51 +8,51 @@
   },
   {
     "admin_id":1,
-    "login": "aburke2@strongschools.nyc.gov",
+    "login": "aburke2@schools.nyc.gov",
     "Password": "test",
-    "Email": "aburke2@strongschools.nyc.gov",
+    "Email": "aburke2@schools.nyc.gov",
     "Name": "Allison Burke"
   },
   {
     "admin_id":1,
-    "login": "Dcopeland@strongschools.nyc.gov",
+    "login": "dcopeland@schools.nyc.gov",
     "Password": "test",
-    "Email": "Dcopeland@strongschools.nyc.gov",
+    "Email": "dcopeland@schools.nyc.gov",
     "Name": "Denise Copeland"
   },
   {
     "admin_id":1,
-    "login": "Fmulcahy@strongschools.nyc.gov",
+    "login": "fmulcahy@schools.nyc.gov",
     "Password": "test",
-    "Email": "Fmulcahy@strongschools.nyc.gov",
+    "Email": "fmulcahy@schools.nyc.gov",
     "Name": "Fiona Mulcahy"
   },
   {
     "admin_id":1,
-    "login": "Jgrunin@strongschools.nyc.gov",
+    "login": "jgrunin@schools.nyc.gov",
     "Password": "test",
-    "Email": "Jgrunin@strongschools.nyc.gov",
+    "Email": "jgrunin@schools.nyc.gov",
     "Name": "Jen Grunin"
   },
   {
     "admin_id":1,
-    "login": "Jsteckel@strongschools.nyc.gov",
+    "login": "jsteckel@schools.nyc.gov",
     "Password": "test",
-    "Email": "Jsteckel@strongschools.nyc.gov",
+    "Email": "jsteckel@schools.nyc.gov",
     "Name": "Josh Steckel"
   },
   {
     "admin_id":1,
-    "login": "Khall@strongschools.nyc.gov",
+    "login": "khall@schools.nyc.gov",
     "Password": "test",
-    "Email": "Khall@strongschools.nyc.gov",
+    "Email": "khall@schools.nyc.gov",
     "Name": "Kim Hall"
   },
   {
     "admin_id":1,
-    "login": "MCastillo8@strongschools.nyc.gov",
+    "login": "mcastillo8@schools.nyc.gov",
     "Password": "test",
-    "Email": "MCastillo8@strongschools.nyc.gov",
+    "Email": "mcastillo8@schools.nyc.gov",
     "Name": "Marisa Castillo"
   },
   {
@@ -64,30 +64,30 @@
   },
   {
     "admin_id":1,
-    "login": "NFerizGordon@strongschools.nyc.gov",
+    "login": "nferizgordon@schools.nyc.gov",
     "Password": "test",
-    "Email": "NFerizGordon@strongschools.nyc.gov",
+    "Email": "nferizgordon@schools.nyc.gov",
     "Name": "Norma Feriz Gordon"
   },
   {
     "admin_id":1,
-    "login": "RJohnson28@strongschools.nyc.gov",
+    "login": "rjohnson28@schools.nyc.gov",
     "Password": "test",
-    "Email": "RJohnson28@strongschools.nyc.gov",
+    "Email": "rjohnson28@schools.nyc.gov",
     "Name": "Raymond Johnson"
   },
   {
     "admin_id":1,
-    "login": "Smikolich@strongschools.nyc.gov",
+    "login": "smikolich@schools.nyc.gov",
     "Password": "test",
-    "Email": "Smikolich@strongschools.nyc.gov",
+    "Email": "smikolich@schools.nyc.gov",
     "Name": "Simone Mikolich"
   },
   {
     "admin_id":1,
-    "login": "ZSantiago2@strongschools.nyc.gov",
+    "login": "zsantiago2@schools.nyc.gov",
     "Password": "test",
-    "Email": "ZSantiago2@strongschools.nyc.gov",
+    "Email": "zsantiago2@schools.nyc.gov",
     "Name": "Zee Santiago"
   },
   {
@@ -96,5 +96,40 @@
     "Password": "test",
     "Email": "test@test.com",
     "Name": "Test Coach"
+  },
+  {
+    "admin_id":1,
+    "login": "awolcott@eskolta.org",
+    "Password": "test",
+    "Email": "awolcott@eskolta.org",
+    "Name": "Alicia Wolcott"
+  },
+  {
+    "admin_id":1,
+    "login": "ekleinman@eskolta.org",
+    "Password": "test",
+    "Email": "ekleinman@eskolta.org",
+    "Name": "Emily Kleinman"
+  },
+  {
+    "admin_id":1,
+    "login": "jferrel@eskolta.org",
+    "Password": "test",
+    "Email": "jferrel@eskolta.org",
+    "Name": "Jamie Ferrel"
+  },
+  {
+    "admin_id":1,
+    "login": "jfurer@eskolta.org",
+    "Password": "test",
+    "Email": "jfurer@eskolta.org",
+    "Name": "Jessica Furer"
+  },
+  {
+    "admin_id":1,
+    "login": "mrothman@eskolta.org",
+    "Password": "test",
+    "Email": "mrothman@eskolta.org",
+    "Name": "Micahel Rothman"
   }
 ]
