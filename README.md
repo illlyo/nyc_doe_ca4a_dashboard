@@ -22,15 +22,15 @@ Client work was done for the NYC Department of Education
 ## Technologies Used:
 
 **Front-end**
-..*react v16.3.2
-..*Moment v2.22.1
-..*d3 v4.13
-..*react-admin v2.0.0
-..*react-stepzilla v4.7.2
+* react v16.3.2
+* Moment v2.22.1
+* d3 v4.13
+* react-admin v2.0.0
+* react-stepzilla v4.7.2
 
 **Back-end**
-..*Rails v5.1.5
-..*bcrypt v3.1.7
-..*foreman v2.0.0
+* Rails v5.1.5
+* bcrypt v3.1.7
+* foreman v2.0.0
 
 ## Future Implementation
