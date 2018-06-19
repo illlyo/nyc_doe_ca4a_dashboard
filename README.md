@@ -10,7 +10,8 @@ Client work was done for the NYC Department of Education
 ---
 ![browser-screenshot](/client/public/dashboard-results-2.png)
 ---
-
+![browser-screenshot](/client/public/React-admin.png)
+---
 ## Features
 -Bcrypt v3.1.7
 
@@ -32,4 +33,4 @@ Back-end
   -bcrypt v3.1.7
   -foreman v2.0.0
 
-Future Implementation
+## Future Implementation
